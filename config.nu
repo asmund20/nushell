@@ -36,3 +36,6 @@ alias gs = git status
 alias gst = git stash
 
 alias e = nvim
+
+alias kanata-config = nvim ~/.config/kanata/kanata.kbd
+def kanata-restart [] { pkill kanata ; setsid kanata -n }
