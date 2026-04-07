@@ -17,6 +17,8 @@
 # options using:
 #     config nu --doc | nu-highlight | less -R
 
+source ./git-completions.nu
+
 $env.config.show_banner = false
 $env.PROMPT_COMMAND_RIGHT = ""
 $env.config.edit_mode = 'vi'
