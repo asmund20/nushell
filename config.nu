@@ -43,3 +43,9 @@ alias vim = nvim
 
 alias kanata-config = nvim ~/.config/kanata/kanata.kbd
 def kanata-restart [] { pkill kanata ; setsid kanata -n }
+
+def disable-monitor [monitor?: string] {
+    hyprctl eval $"hl.monitor\({output=\"($monitor | default "eDP-1")\", disabled = true}\)"
+}
+
+def monitor-names [] { hyprctl monitors -j | from json | select name make model focused activeWorkspace.id }
